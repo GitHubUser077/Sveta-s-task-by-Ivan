@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		045772A7282513E700CA4804 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045772A6282513E700CA4804 /* AppDelegate.swift */; };
 		045772A9282513E700CA4804 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045772A8282513E700CA4804 /* SceneDelegate.swift */; };
-		045772AB282513E700CA4804 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045772AA282513E700CA4804 /* ViewController.swift */; };
 		045772AE282513E700CA4804 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045772AC282513E700CA4804 /* Main.storyboard */; };
 		045772B0282513E700CA4804 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045772AF282513E700CA4804 /* Assets.xcassets */; };
 		045772B3282513E700CA4804 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045772B1282513E700CA4804 /* LaunchScreen.storyboard */; };
+		045772C12825183C00CA4804 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045772C02825183C00CA4804 /* LogInViewController.swift */; };
+		045772C42825238A00CA4804 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045772C32825238A00CA4804 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		045772A3282513E700CA4804 /* Sveta's task by Ivan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sveta's task by Ivan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		045772A6282513E700CA4804 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		045772A8282513E700CA4804 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		045772AA282513E700CA4804 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		045772AD282513E700CA4804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		045772AF282513E700CA4804 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		045772B2282513E700CA4804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		045772B4282513E700CA4804 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		045772C02825183C00CA4804 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		045772C32825238A00CA4804 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,80 @@
 		045772A5282513E700CA4804 /* Sveta's task by Ivan */ = {
 			isa = PBXGroup;
 			children = (
+				04C64664282542AD00BF5E03 /* Extensions */,
+				045772BC2825147B00CA4804 /* Custom Views */,
+				045772BB2825142800CA4804 /* Views */,
+				045772BA2825142000CA4804 /* Models */,
 				045772A6282513E700CA4804 /* AppDelegate.swift */,
 				045772A8282513E700CA4804 /* SceneDelegate.swift */,
-				045772AA282513E700CA4804 /* ViewController.swift */,
 				045772AC282513E700CA4804 /* Main.storyboard */,
 				045772AF282513E700CA4804 /* Assets.xcassets */,
 				045772B1282513E700CA4804 /* LaunchScreen.storyboard */,
 				045772B4282513E700CA4804 /* Info.plist */,
 			);
 			path = "Sveta's task by Ivan";
+			sourceTree = "<group>";
+		};
+		045772BA2825142000CA4804 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		045772BB2825142800CA4804 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				045772C22825235F00CA4804 /* SettingsController */,
+				045772BF282517D700CA4804 /* LogInController */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		045772BC2825147B00CA4804 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				045772BE2825149800CA4804 /* CollectionViewCells */,
+				045772BD2825148C00CA4804 /* TableViewCells */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		045772BD2825148C00CA4804 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		045772BE2825149800CA4804 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		045772BF282517D700CA4804 /* LogInController */ = {
+			isa = PBXGroup;
+			children = (
+				045772C02825183C00CA4804 /* LogInViewController.swift */,
+			);
+			path = LogInController;
+			sourceTree = "<group>";
+		};
+		045772C22825235F00CA4804 /* SettingsController */ = {
+			isa = PBXGroup;
+			children = (
+				045772C32825238A00CA4804 /* SettingsViewController.swift */,
+			);
+			path = SettingsController;
+			sourceTree = "<group>";
+		};
+		04C64664282542AD00BF5E03 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +205,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				045772AB282513E700CA4804 /* ViewController.swift in Sources */,
+				045772C12825183C00CA4804 /* LogInViewController.swift in Sources */,
 				045772A7282513E700CA4804 /* AppDelegate.swift in Sources */,
 				045772A9282513E700CA4804 /* SceneDelegate.swift in Sources */,
+				045772C42825238A00CA4804 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
