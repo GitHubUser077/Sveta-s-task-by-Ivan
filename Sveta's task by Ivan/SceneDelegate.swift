@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
               let window = UIWindow(windowScene: windowScene)
             guard UserDefaults.standard.value(forKey: "userName") != nil else { return }
             print(UserDefaults.standard.value(forKey: "userName"))
-            let settingsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsNC") as! UINavigationController
+            let settingsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppTabBar") as! UITabBarController
               window.rootViewController = settingsVC
               self.window = window
               window.makeKeyAndVisible()

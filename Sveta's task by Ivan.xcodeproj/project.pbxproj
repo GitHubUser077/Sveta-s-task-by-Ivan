@@ -14,6 +14,9 @@
 		045772B3282513E700CA4804 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045772B1282513E700CA4804 /* LaunchScreen.storyboard */; };
 		045772C12825183C00CA4804 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045772C02825183C00CA4804 /* LogInViewController.swift */; };
 		045772C42825238A00CA4804 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045772C32825238A00CA4804 /* SettingsViewController.swift */; };
+		04C646682826588500BF5E03 /* InternetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C646672826588500BF5E03 /* InternetUser.swift */; };
+		04C6466A28265A4500BF5E03 /* SimpleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6466928265A4500BF5E03 /* SimpleUser.swift */; };
+		04C6466E2826710500BF5E03 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6466D2826710500BF5E03 /* FriendsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		045772B4282513E700CA4804 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		045772C02825183C00CA4804 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		045772C32825238A00CA4804 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		04C646672826588500BF5E03 /* InternetUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetUser.swift; sourceTree = "<group>"; };
+		04C6466928265A4500BF5E03 /* SimpleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUser.swift; sourceTree = "<group>"; };
+		04C6466D2826710500BF5E03 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,8 @@
 		045772BA2825142000CA4804 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				04C646672826588500BF5E03 /* InternetUser.swift */,
+				04C6466928265A4500BF5E03 /* SimpleUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -82,6 +90,7 @@
 		045772BB2825142800CA4804 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				04C6466C282670D500BF5E03 /* FriendsViewController */,
 				045772C22825235F00CA4804 /* SettingsController */,
 				045772BF282517D700CA4804 /* LogInController */,
 			);
@@ -132,6 +141,14 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04C6466C282670D500BF5E03 /* FriendsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				04C6466D2826710500BF5E03 /* FriendsViewController.swift */,
+			);
+			path = FriendsViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +226,9 @@
 				045772A7282513E700CA4804 /* AppDelegate.swift in Sources */,
 				045772A9282513E700CA4804 /* SceneDelegate.swift in Sources */,
 				045772C42825238A00CA4804 /* SettingsViewController.swift in Sources */,
+				04C6466E2826710500BF5E03 /* FriendsViewController.swift in Sources */,
+				04C6466A28265A4500BF5E03 /* SimpleUser.swift in Sources */,
+				04C646682826588500BF5E03 /* InternetUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
