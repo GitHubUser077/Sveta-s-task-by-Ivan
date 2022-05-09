@@ -45,12 +45,12 @@ class LogInViewController: UIViewController {
         UserDefaults.standard.set(userNameTextField.text, forKey: "userName")
         UserDefaults.standard.set(passwordTextField.text, forKey: "password")
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "SettingsNC") as! UINavigationController
+        let appTabBarController = storyboard?.instantiateViewController(withIdentifier: "AppTabBar") as! UITabBarController
         
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .flipHorizontal
+        appTabBarController.modalPresentationStyle = .fullScreen
+        appTabBarController.modalTransitionStyle = .flipHorizontal
         
-        present(vc, animated: true, completion: nil)
+        present(appTabBarController, animated: true, completion: nil)
         
     }
     
