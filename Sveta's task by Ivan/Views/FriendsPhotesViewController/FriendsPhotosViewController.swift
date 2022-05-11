@@ -1,7 +1,7 @@
 //
 //  FriendsPhotoesViewController.swift
 //  Sveta's task by Ivan
-//
+
 //  Created by mac on 11.05.2022.
 //
 

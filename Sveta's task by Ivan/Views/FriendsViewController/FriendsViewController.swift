@@ -22,6 +22,10 @@ class FriendsViewController: UIViewController {
     var globalUserDictionary = [String:[SimpleUser]]()
     var globalUserNameLetterTitle = [String]()
     
+    var filteredUsers:[SimpleUser] = []
+    var filteredDictionary = [String:[SimpleUser]]()
+    var filteredUserNameLetterTittle = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +36,7 @@ class FriendsViewController: UIViewController {
         friendsTableView.delegate = self
         friendsTableView.dataSource = self
        
-        
+        friendsSearchBar.delegate = self
         
     }
     
@@ -147,5 +151,55 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    
+        
 }
+
+    //MARK: - Search Functionality
+
+extension FriendsViewController: UISearchBarDelegate {
+  
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+       
+
+        
+        if !searchText.isEmpty {
+          
+            globalUserDictionary = [:]
+            globalUserNameLetterTitle = []
+            
+            for user in  simpleUsers {
+                
+                if user.name.lowercased().contains(searchText.lowercased()) {
+                   
+                    let secondLetterIndex = user.name.index(user.name.startIndex, offsetBy: 1)
+                    let userNameFirstLetter = String(user.name[..<secondLetterIndex])
+                    
+                    if var innerLoopUserNameArrayThatHasTheSameKey = globalUserDictionary[userNameFirstLetter] {
+                        innerLoopUserNameArrayThatHasTheSameKey.append(user)
+                        globalUserDictionary[userNameFirstLetter] = innerLoopUserNameArrayThatHasTheSameKey
+                    } else {
+                        globalUserDictionary[userNameFirstLetter] = [user]
+                    }
+                    
+                }
+                
+                let userNameLetterTitle = [String](globalUserDictionary.keys)
+                globalUserNameLetterTitle = userNameLetterTitle.sorted(by: { $0 < $1 })
+            }
+            
+        } else {
+            globalUserDictionary = [:]
+            globalUserNameLetterTitle = []
+            createUserDictionary()
+            friendsTableView.reloadData()
+        }
+        
+        friendsTableView.reloadData()
+        
+    }
+
+}
+
+
+
