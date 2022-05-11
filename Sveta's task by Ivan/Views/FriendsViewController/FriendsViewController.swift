@@ -17,29 +17,7 @@ class FriendsViewController: UIViewController {
     
         //MARK: - Properties
     
-    var simpleUsers = [
-        SimpleUser(name: "Ivan", imageName: "user"),
-        SimpleUser(name: "James", imageName: "user"),
-        SimpleUser(name: "Robert", imageName: "user"),
-        SimpleUser(name: "John", imageName: "user"),
-        SimpleUser(name: "Michael", imageName: "user"),
-        SimpleUser(name: "David", imageName: "user"),
-        SimpleUser(name: "William", imageName: "user"),
-        SimpleUser(name: "Richard", imageName: "user"),
-        SimpleUser(name: "Joseph", imageName: "user"),
-        SimpleUser(name: "Thomas", imageName: "user"),
-        SimpleUser(name: "Charles", imageName: "user"),
-        SimpleUser(name: "Christopher", imageName: "user"),
-        SimpleUser(name: "Daniel", imageName: "user"),
-        SimpleUser(name: "Matthew", imageName: "user"),
-        SimpleUser(name: "Anthony", imageName: "user"),
-        SimpleUser(name: "Steven", imageName: "user"),
-        SimpleUser(name: "Andrew", imageName: "user"),
-        SimpleUser(name: "Joshua", imageName: "user"),
-        SimpleUser(name: "Kenneth", imageName: "user"),
-        SimpleUser(name: "Kevin", imageName: "user"),
-        SimpleUser(name: "Gary", imageName: "user"),
-    ]
+    var simpleUsers = testUsers
     
     var globalUserDictionary = [String:[SimpleUser]]()
     var globalUserNameLetterTitle = [String]()
@@ -50,7 +28,7 @@ class FriendsViewController: UIViewController {
         
        createUserDictionary()
 
-        friendsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        friendsTableView.register(FriendsTableViewCell.nib(), forCellReuseIdentifier: FriendsTableViewCell.identifier)
         friendsTableView.delegate = self
         friendsTableView.dataSource = self
        
@@ -60,11 +38,7 @@ class FriendsViewController: UIViewController {
     
     private func createUserDictionary() {
         
-        
-        
-        
-        
-        
+
         for user in simpleUsers {
             let secondLetterIndex = user.name.index(user.name.startIndex, offsetBy: 1)
             let userNameFirstLetter = String(user.name[..<secondLetterIndex])
@@ -111,13 +85,23 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: FriendsTableViewCell.identifier, for: indexPath) as! FriendsTableViewCell
         
         let dictionaryKey = globalUserNameLetterTitle[indexPath.section]
         
         if let usersArray = globalUserDictionary[dictionaryKey] {
-            cell.textLabel?.text = usersArray[indexPath.row].name
-            cell.imageView?.image = UIImage(named: usersArray[indexPath.row].imageName)
+            
+            
+            cell.configure(with: usersArray[indexPath.row])
+            
+            
+//            cell.textLabel?.text = usersArray[indexPath.row].name
+//            cell.imageView?.image = UIImage(named: usersArray[indexPath.row].imageName)
+        
+//            cell.imageView?.layer.cornerRadius = cell.frame.size.height/2
+//            cell.imageView?.layer.masksToBounds = true
+            
+
         }
         
         return cell
@@ -138,5 +122,30 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return globalUserNameLetterTitle
     }
+//
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 60
+//    }
+    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let dictionaryKey = globalUserNameLetterTitle[indexPath.section]
+        
+        if let users = globalUserDictionary[dictionaryKey] {
+            
+            let user = users[indexPath.row]
+            
+            let friendsPhotosViewController = storyboard?.instantiateViewController(withIdentifier: "FriendsPhotosViewController") as! FriendsPhotosViewController
+            friendsPhotosViewController.user = user
+            
+            navigationController?.pushViewController(friendsPhotosViewController, animated: true)
+            
+        }
+        
+        
+        
+    }
+    
     
 }
