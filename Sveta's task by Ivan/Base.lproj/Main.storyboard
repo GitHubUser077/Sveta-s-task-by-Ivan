@@ -208,6 +208,97 @@
             </objects>
             <point key="canvasLocation" x="-84" y="2273"/>
         </scene>
+        <!--Like Photo View Controller-->
+        <scene sceneID="2dM-Bx-lYT">
+            <objects>
+                <viewController storyboardIdentifier="LikePhotoViewController" id="1if-vw-9bh" customClass="LikePhotoViewController" customModule="Sveta_s_task_by_Ivan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ggW-pW-L1l">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7d-4D-IDQ">
+                                <rect key="frame" x="10" y="802" width="394" height="50"/>
+                                <color key="backgroundColor" red="0.13581955484834907" green="0.32621471880824066" blue="0.62970884520598136" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1Cz-pQ-Qzu"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Like">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapLikeButton:" destination="1if-vw-9bh" eventType="touchUpInside" id="f5l-5c-Qfd"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3E0-N4-c85">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="779"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FQA-sK-qMs">
+                                        <rect key="frame" x="0.0" y="8" width="414" height="688"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="FQA-sK-qMs" firstAttribute="leading" secondItem="3E0-N4-c85" secondAttribute="leading" id="4PN-MM-eBK"/>
+                                    <constraint firstAttribute="trailing" secondItem="FQA-sK-qMs" secondAttribute="trailing" id="o6e-0m-o1k"/>
+                                    <constraint firstItem="FQA-sK-qMs" firstAttribute="top" secondItem="3E0-N4-c85" secondAttribute="top" constant="8" id="u9C-ME-bxk"/>
+                                    <constraint firstAttribute="bottom" secondItem="FQA-sK-qMs" secondAttribute="bottom" id="yY3-C1-fYO"/>
+                                </constraints>
+                            </scrollView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PHB-f8-G6e">
+                                <rect key="frame" x="40" y="752" width="57" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lf-yc-LGJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="24.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFT-YU-5kF">
+                                        <rect key="frame" x="44.5" y="0.0" width="12.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Mh8-r6-BX0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3E0-N4-c85" firstAttribute="top" secondItem="ggW-pW-L1l" secondAttribute="top" constant="83" id="0Mq-gO-qoA"/>
+                            <constraint firstAttribute="trailing" secondItem="3E0-N4-c85" secondAttribute="trailing" id="EFy-dP-0MQ"/>
+                            <constraint firstItem="3E0-N4-c85" firstAttribute="leading" secondItem="ggW-pW-L1l" secondAttribute="leading" id="Mul-kh-JNp"/>
+                            <constraint firstItem="k7d-4D-IDQ" firstAttribute="leading" secondItem="Mh8-r6-BX0" secondAttribute="leading" constant="10" id="O2m-oo-YIN"/>
+                            <constraint firstItem="Mh8-r6-BX0" firstAttribute="bottom" secondItem="k7d-4D-IDQ" secondAttribute="bottom" constant="10" id="Qzi-K8-pLj"/>
+                            <constraint firstItem="Mh8-r6-BX0" firstAttribute="trailing" secondItem="k7d-4D-IDQ" secondAttribute="trailing" constant="10" id="T7e-rZ-jsB"/>
+                            <constraint firstItem="k7d-4D-IDQ" firstAttribute="top" secondItem="3E0-N4-c85" secondAttribute="bottom" constant="5" id="p9A-zB-SeY"/>
+                            <constraint firstItem="PHB-f8-G6e" firstAttribute="leading" secondItem="ggW-pW-L1l" secondAttribute="leadingMargin" constant="20" id="wPV-R0-tDm"/>
+                            <constraint firstItem="k7d-4D-IDQ" firstAttribute="top" secondItem="PHB-f8-G6e" secondAttribute="bottom" constant="20" id="yu4-7o-VH3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="EyY-mK-7nt"/>
+                    <connections>
+                        <outlet property="heartLabel" destination="8lf-yc-LGJ" id="VpO-X9-h5n"/>
+                        <outlet property="imageView" destination="FQA-sK-qMs" id="CU3-Ny-Rjb"/>
+                        <outlet property="imageViewBottomConstraint" destination="yY3-C1-fYO" id="lfM-Fl-1gR"/>
+                        <outlet property="imageViewLeadingConstraint" destination="4PN-MM-eBK" id="oVt-dy-TM3"/>
+                        <outlet property="imageViewTopConstraint" destination="u9C-ME-bxk" id="UQ9-Nt-hhO"/>
+                        <outlet property="imageViewTrailingConstraint" destination="o6e-0m-o1k" id="JEA-BV-LkG"/>
+                        <outlet property="likeButton" destination="k7d-4D-IDQ" id="i93-nc-UEo"/>
+                        <outlet property="likeCountLabel" destination="iFT-YU-5kF" id="1ow-4d-xMJ"/>
+                        <outlet property="scrollView" destination="3E0-N4-c85" id="yzh-SQ-UUG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XWX-aD-yLR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-84.057971014492765" y="2965.8482142857142"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="mEn-oD-DLm">
             <objects>

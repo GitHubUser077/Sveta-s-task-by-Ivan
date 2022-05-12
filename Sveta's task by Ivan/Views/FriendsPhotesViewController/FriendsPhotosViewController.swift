@@ -29,9 +29,19 @@ class FriendsPhotosViewController: UIViewController {
 
         title = "\(user.name)'s photos"
         
+          //MARK: - CollectionViewcell Layout
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 120, height: 120)
+
+        //Spacing between cells
+        layout.itemSize = CGSize(width: (view.frame.size.width/3)-3, height: (view.frame.size.width/3)-3)
+        layout.minimumLineSpacing = 2
+        layout.minimumInteritemSpacing = 2
+        
+        //Spacing Between the edges of the screen
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2)
+        
         friendsCollectionView.collectionViewLayout = layout
+        
         
         friendsCollectionView.register(FriendsPhotosCollectionViewCell.nib(), forCellWithReuseIdentifier: FriendsPhotosCollectionViewCell.identifier)
         friendsCollectionView.delegate = self
@@ -65,14 +75,23 @@ extension FriendsPhotosViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        print("Something")
+
+        let photo = usersPhotos[indexPath.row]
+        
+        
+        let photoViewController = storyboard?.instantiateViewController(withIdentifier: "LikePhotoViewController") as! LikePhotoViewController
+        
+        photoViewController.photo = photo
+        
+        navigationController?.pushViewController(photoViewController, animated: true)
     }
     
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 120)
-    }
-    
+
+        
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: view.frame.size.width/2, height: view.frame.size.width/2)
+//    }
+//
     
 }
 

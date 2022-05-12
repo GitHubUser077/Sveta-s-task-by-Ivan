@@ -25,6 +25,7 @@
 		04F19C7F282AC834009D353E /* FriendsPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F19C7E282AC834009D353E /* FriendsPhotosViewController.swift */; };
 		04F19C83282ACBAB009D353E /* FriendsPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F19C81282ACBAB009D353E /* FriendsPhotosCollectionViewCell.swift */; };
 		04F19C84282ACBAB009D353E /* FriendsPhotosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F19C82282ACBAB009D353E /* FriendsPhotosCollectionViewCell.xib */; };
+		04F19C87282BEC7F009D353E /* LikePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F19C86282BEC7F009D353E /* LikePhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		04F19C7E282AC834009D353E /* FriendsPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPhotosViewController.swift; sourceTree = "<group>"; };
 		04F19C81282ACBAB009D353E /* FriendsPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		04F19C82282ACBAB009D353E /* FriendsPhotosCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsPhotosCollectionViewCell.xib; sourceTree = "<group>"; };
+		04F19C86282BEC7F009D353E /* LikePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikePhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		045772BB2825142800CA4804 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				04F19C85282BEC63009D353E /* LikePhotoViewController */,
 				04F19C7D282AC800009D353E /* FriendsPhotesViewController */,
 				04C6466C282670D500BF5E03 /* FriendsViewController */,
 				045772C22825235F00CA4804 /* SettingsController */,
@@ -207,6 +210,14 @@
 			path = FriendsPhotosCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		04F19C85282BEC63009D353E /* LikePhotoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				04F19C86282BEC7F009D353E /* LikePhotoViewController.swift */,
+			);
+			path = LikePhotoViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -286,6 +297,7 @@
 				045772C12825183C00CA4804 /* LogInViewController.swift in Sources */,
 				04F19C77282A612B009D353E /* CardView.swift in Sources */,
 				045772A7282513E700CA4804 /* AppDelegate.swift in Sources */,
+				04F19C87282BEC7F009D353E /* LikePhotoViewController.swift in Sources */,
 				045772A9282513E700CA4804 /* SceneDelegate.swift in Sources */,
 				04F19C73282A5FC8009D353E /* FriendsTableViewCell.swift in Sources */,
 				04F19C83282ACBAB009D353E /* FriendsPhotosCollectionViewCell.swift in Sources */,
@@ -446,6 +458,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,6 +486,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

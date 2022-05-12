@@ -9,4 +9,6 @@ import Foundation
 
 struct SimplePhoto {
     let name: String
+    var isLiked: Bool = false
+    var numberOfLikes = 0
 }
