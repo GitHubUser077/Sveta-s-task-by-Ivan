@@ -33,6 +33,8 @@ class LikePhotoViewController: UIViewController {
         //MARK: - Properties
     
     var photo: SimplePhoto!
+    
+    var completionHandler: ((SimplePhoto) -> ())?
 
     
         //MARK: - Lifecycle
@@ -50,10 +52,13 @@ class LikePhotoViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-       
+    
         super.viewDidLayoutSubviews()
+        setUpLabelsAndTexts()
         updateConstraintsForSize(view.bounds.size)
         updateMinZoomScaleForSize(view.bounds.size)
+        
+        
     }
     
         //MARK: - @IBActions
@@ -63,6 +68,8 @@ class LikePhotoViewController: UIViewController {
         
         onLikePhoto()
         
+        completionHandler?(photo)
+
     }
     
     
@@ -81,6 +88,21 @@ class LikePhotoViewController: UIViewController {
             heartLabel.text = "❤️"
             likeCountLabel.text = "\(photo.numberOfLikes)"
             
+        }
+        
+      
+    }
+    
+    
+    private func setUpLabelsAndTexts() {
+        if photo.isLiked {
+            likeButton.setTitle("Dislike", for: .normal)
+            heartLabel.text = "❤️"
+            likeCountLabel.text = "\(photo.numberOfLikes)"
+        } else {
+            likeButton.setTitle("Like", for: .normal)
+            heartLabel.text = "♡"
+            likeCountLabel.text = "\(photo.numberOfLikes)"
         }
     }
  

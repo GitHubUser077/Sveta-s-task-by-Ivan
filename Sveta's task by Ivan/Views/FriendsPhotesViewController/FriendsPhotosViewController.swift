@@ -83,6 +83,12 @@ extension FriendsPhotosViewController: UICollectionViewDelegate, UICollectionVie
         
         photoViewController.photo = photo
         
+        photoViewController.completionHandler = { [weak self] returnedPhoto in
+            
+            self?.usersPhotos[indexPath.row] = returnedPhoto
+            
+        }
+        
         navigationController?.pushViewController(photoViewController, animated: true)
     }
     
