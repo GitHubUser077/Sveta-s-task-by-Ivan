@@ -25,9 +25,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
               let window = UIWindow(windowScene: windowScene)
             guard UserDefaults.standard.value(forKey: "userName") != nil else { return }
-            print(UserDefaults.standard.value(forKey: "userName"))
+//            print(UserDefaults.standard.value(forKey: "userName"))
+            
+            
             let appTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppTabBar") as! UITabBarController
-              window.rootViewController = appTabBarController
+              
+//            let meUser = SimpleUser(name: "Ivan", avatarImage: "mountain1", photos: [SimplePhoto(name: "phone1"),SimplePhoto(name: "phone2"),SimplePhoto(name: "phone3")], groups: [], friends: testUsers)
+//            
+//            let friendsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FriendsViewController") as! FriendsViewController
+//            
+//            friendsVC.meUser = meUser
+//            
+//            let settingsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+//            
+//            settingsVC.meUser = meUser
+//            
+//            let friendsNVC = UINavigationController(rootViewController: friendsVC)
+//            let settingsNVC = UINavigationController(rootViewController: settingsVC)
+//            let nVC = UINavigationController(nibName: "SettingsNC", bundle: nil)
+//            
+//            
+//            appTabBarController.setViewControllers([nVC], animated: false)
+            
+            
+            window.rootViewController = appTabBarController
               self.window = window
               window.makeKeyAndVisible()
           }

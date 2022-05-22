@@ -17,20 +17,25 @@ class FriendsViewController: UIViewController {
     
         //MARK: - Properties
     
-    var simpleUsers = testUsers
+ 
+    
+    var meUser = SimpleUser(name: "Ivan", avatarImage: "mountain1", photos: [SimplePhoto(name: "phone1"),SimplePhoto(name: "phone2"),SimplePhoto(name: "phone3")], groups: [], friends: testUsers)
+    
+//    var simpleUsers = testUsers
     
     var globalUserDictionary = [String:[SimpleUser]]()
-    var globalUserNameLetterTitle = [String]()
+    var globalUserNameLetterTitles = [String]()
     
-    var filteredUsers:[SimpleUser] = []
-    var filteredDictionary = [String:[SimpleUser]]()
-    var filteredUserNameLetterTittle = [String]()
+    
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       createUserDictionary()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        createUserDictionary()
 
         friendsTableView.register(FriendsTableViewCell.nib(), forCellReuseIdentifier: FriendsTableViewCell.identifier)
         friendsTableView.delegate = self
@@ -38,12 +43,15 @@ class FriendsViewController: UIViewController {
        
         friendsSearchBar.delegate = self
         
+       
+        
     }
     
     private func createUserDictionary() {
-        
+     
+        print("\(meUser.friends)")
 
-        for user in simpleUsers {
+        for user in meUser.friends {
             let secondLetterIndex = user.name.index(user.name.startIndex, offsetBy: 1)
             let userNameFirstLetter = String(user.name[..<secondLetterIndex])
 //            print("\(userNameFirstLetter)")
@@ -59,12 +67,13 @@ class FriendsViewController: UIViewController {
             }
         }
         
-        let userNameLetterTitle = [String](globalUserDictionary.keys)
-        print("\(userNameLetterTitle)")
-        globalUserNameLetterTitle = userNameLetterTitle.sorted(by: { $0 < $1 })
-        print("\(globalUserNameLetterTitle)")
+        let userNameLetterTitles = [String](globalUserDictionary.keys)
+        print("\(userNameLetterTitles)")
+        globalUserNameLetterTitles = userNameLetterTitles.sorted(by: { $0 < $1 })
+        print("\(globalUserNameLetterTitles)")
         
     }
+
 
  
 
@@ -74,15 +83,15 @@ class FriendsViewController: UIViewController {
 extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return globalUserNameLetterTitle.count
+        return globalUserNameLetterTitles.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return globalUserNameLetterTitle[section]
+        return globalUserNameLetterTitles[section]
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let dictionaryKey = globalUserNameLetterTitle[section]
+        let dictionaryKey = globalUserNameLetterTitles[section]
         guard let users = globalUserDictionary[dictionaryKey] else { return 0 }
         return users.count
     }
@@ -91,7 +100,7 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
      
         let cell = tableView.dequeueReusableCell(withIdentifier: FriendsTableViewCell.identifier, for: indexPath) as! FriendsTableViewCell
         
-        let dictionaryKey = globalUserNameLetterTitle[indexPath.section]
+        let dictionaryKey = globalUserNameLetterTitles[indexPath.section]
         
         if let usersArray = globalUserDictionary[dictionaryKey] {
             
@@ -124,7 +133,7 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return globalUserNameLetterTitle
+        return globalUserNameLetterTitles
     }
 //
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -136,7 +145,7 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let dictionaryKey = globalUserNameLetterTitle[indexPath.section]
+        let dictionaryKey = globalUserNameLetterTitles[indexPath.section]
         
         if let users = globalUserDictionary[dictionaryKey] {
             
@@ -168,9 +177,9 @@ extension FriendsViewController: UISearchBarDelegate {
         if !searchText.isEmpty {
           
             globalUserDictionary = [:]
-            globalUserNameLetterTitle = []
+            globalUserNameLetterTitles = []
             
-            for user in  simpleUsers {
+            for user in  meUser.friends {
                 
                 if user.name.lowercased().contains(searchText.lowercased()) {
                    
@@ -187,12 +196,12 @@ extension FriendsViewController: UISearchBarDelegate {
                 }
                 
                 let userNameLetterTitle = [String](globalUserDictionary.keys)
-                globalUserNameLetterTitle = userNameLetterTitle.sorted(by: { $0 < $1 })
+                globalUserNameLetterTitles = userNameLetterTitle.sorted(by: { $0 < $1 })
             }
             
         } else {
             globalUserDictionary = [:]
-            globalUserNameLetterTitle = []
+            globalUserNameLetterTitles = []
             createUserDictionary()
             friendsTableView.reloadData()
         }

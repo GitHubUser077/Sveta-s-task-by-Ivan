@@ -29,7 +29,7 @@ class FriendsPhotosViewController: UIViewController {
 
         title = "\(user.name)'s photos"
         
-          //MARK: - CollectionViewcell Layout
+          //MARK: - CollectionViewCell Layout
         let layout = UICollectionViewFlowLayout()
 
         //Spacing between cells

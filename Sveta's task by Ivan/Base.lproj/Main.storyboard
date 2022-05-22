@@ -132,11 +132,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="d5Y-Fm-wja">
-                                <rect key="frame" x="0.0" y="140" width="414" height="51"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tQS-pe-0WU">
-                                <rect key="frame" x="0.0" y="191" width="414" height="622"/>
+                                <rect key="frame" x="0.0" y="139" width="414" height="674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -160,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ky-cE-23E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-83" y="1566"/>
+            <point key="canvasLocation" x="-84" y="1563"/>
         </scene>
         <!--Friends Photos View Controller-->
         <scene sceneID="CaS-Ge-P77">
@@ -313,15 +313,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DpH-75-7Vi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5593" y="1588"/>
+            <point key="canvasLocation" x="6503" y="1606"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="tbO-xf-JBJ">
             <objects>
                 <navigationController storyboardIdentifier="SettingsNC" automaticallyAdjustsScrollViewInsets="NO" id="6EL-8K-hkS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9zt-gT-NYo"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="9zt-gT-NYo"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="tDR-TJ-qVM"/>
+                    <navigationItem key="navigationItem" title="Settings" id="tDR-TJ-qVM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wy5-6g-Dgq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -333,26 +333,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpk-X8-Yfb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5594" y="826"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="RyZ-YN-Jl3">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7gy-sb-HQJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ojg-Pw-4Tr"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="O5S-Ql-77b">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="EhP-9Z-izR" kind="relationship" relationship="rootViewController" id="PQs-Au-FvU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9NH-kE-Mit" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-83" y="826"/>
+            <point key="canvasLocation" x="6502.898550724638" y="825.66964285714278"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2P6-bo-pu7">
@@ -365,17 +346,136 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="7gy-sb-HQJ" kind="relationship" relationship="viewControllers" id="aVc-gL-pRz"/>
-                        <segue destination="6EL-8K-hkS" kind="relationship" relationship="viewControllers" id="AmY-3I-0dM"/>
+                        <segue destination="yF3-fU-j6j" kind="relationship" relationship="viewControllers" id="lAg-b5-uvm"/>
+                        <segue destination="4Sf-sa-GRb" kind="relationship" relationship="viewControllers" id="eG0-5b-avP"/>
+                        <segue destination="6EL-8K-hkS" kind="relationship" relationship="viewControllers" id="HvP-pS-Xob"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="huj-fi-cTZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2500" y="101"/>
         </scene>
+        <!--My Groups-->
+        <scene sceneID="bnH-YS-0zK">
+            <objects>
+                <viewController storyboardIdentifier="MyGroupsViewController" id="0pm-rY-Wvt" customClass="MyGroupsViewController" customModule="Sveta_s_task_by_Ivan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BvU-BD-SVG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="lIc-Sl-vqO">
+                                <rect key="frame" x="0.0" y="140" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sqd-OD-ijs">
+                                <rect key="frame" x="0.0" y="191" width="414" height="622"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rS2-Pe-fO9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sqd-OD-ijs" firstAttribute="top" secondItem="lIc-Sl-vqO" secondAttribute="bottom" id="Anf-mu-8ea"/>
+                            <constraint firstItem="lIc-Sl-vqO" firstAttribute="top" secondItem="rS2-Pe-fO9" secondAttribute="top" id="JU7-Ig-Hb5"/>
+                            <constraint firstItem="rS2-Pe-fO9" firstAttribute="trailing" secondItem="sqd-OD-ijs" secondAttribute="trailing" id="LTg-d8-gXn"/>
+                            <constraint firstItem="lIc-Sl-vqO" firstAttribute="leading" secondItem="rS2-Pe-fO9" secondAttribute="leading" id="Nuh-OZ-no9"/>
+                            <constraint firstItem="sqd-OD-ijs" firstAttribute="leading" secondItem="rS2-Pe-fO9" secondAttribute="leading" id="nSt-Qp-Vnf"/>
+                            <constraint firstItem="rS2-Pe-fO9" firstAttribute="bottom" secondItem="sqd-OD-ijs" secondAttribute="bottom" id="qpJ-Xv-cDV"/>
+                            <constraint firstItem="lIc-Sl-vqO" firstAttribute="trailing" secondItem="rS2-Pe-fO9" secondAttribute="trailing" id="sb4-hO-lKL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Groups" id="jH4-Wy-3hN"/>
+                    <connections>
+                        <outlet property="groupTableView" destination="sqd-OD-ijs" id="r9W-TJ-qiU"/>
+                        <outlet property="searchBar" destination="lIc-Sl-vqO" id="f6e-px-9PA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Gd-pR-Lcz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2968.115942028986" y="1776.5625"/>
+        </scene>
+        <!--Subscribe Group View Controller-->
+        <scene sceneID="oi7-Hs-ab5">
+            <objects>
+                <viewController storyboardIdentifier="SubscribeGroupViewController" id="9pz-z7-PJJ" customClass="SubscribeGroupViewController" customModule="Sveta_s_task_by_Ivan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Kd-7j-HJ2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="4bI-Ew-mN0">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="d36-Ne-NR6">
+                                <rect key="frame" x="0.0" y="95" width="414" height="767"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iyY-Qe-HbM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d36-Ne-NR6" firstAttribute="top" secondItem="4bI-Ew-mN0" secondAttribute="bottom" id="GtX-Ge-mie"/>
+                            <constraint firstItem="4bI-Ew-mN0" firstAttribute="leading" secondItem="iyY-Qe-HbM" secondAttribute="leading" id="IYI-WL-6RJ"/>
+                            <constraint firstAttribute="trailing" secondItem="4bI-Ew-mN0" secondAttribute="trailing" id="KBR-s6-F1q"/>
+                            <constraint firstItem="iyY-Qe-HbM" firstAttribute="bottom" secondItem="d36-Ne-NR6" secondAttribute="bottom" id="UFk-8Y-Rg5"/>
+                            <constraint firstItem="4bI-Ew-mN0" firstAttribute="top" secondItem="iyY-Qe-HbM" secondAttribute="top" id="agA-DG-NsG"/>
+                            <constraint firstItem="iyY-Qe-HbM" firstAttribute="trailing" secondItem="d36-Ne-NR6" secondAttribute="trailing" id="nxL-xI-BCD"/>
+                            <constraint firstItem="d36-Ne-NR6" firstAttribute="leading" secondItem="iyY-Qe-HbM" secondAttribute="leading" id="snT-mn-ztL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="groupSearchBar" destination="4bI-Ew-mN0" id="DZe-QB-lDO"/>
+                        <outlet property="groupTableView" destination="d36-Ne-NR6" id="hNx-zO-FcD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="73h-Mq-9fz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2968" y="2478"/>
+        </scene>
+        <!--Groups-->
+        <scene sceneID="5HH-OK-WNh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Sf-sa-GRb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Groups" image="rectangle.3.group.fill" catalog="system" id="WtI-yP-h7h"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="AXB-2r-nxS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0pm-rY-Wvt" kind="relationship" relationship="rootViewController" id="GLq-Sd-Gs2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oef-cd-hCi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2791" y="826"/>
+        </scene>
+        <!--Friends-->
+        <scene sceneID="XBD-d5-5xL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yF3-fU-j6j" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Friends" image="person.3.sequence.fill" catalog="system" id="Zb5-wK-w3r"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p4v-ry-HoU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EhP-9Z-izR" kind="relationship" relationship="rootViewController" id="fBS-mL-f73"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6L7-gb-Htv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-84" y="852"/>
+        </scene>
     </scenes>
     <resources>
         <image name="LogInImage" width="364" height="223"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="person.3.sequence.fill" catalog="system" width="128" height="58"/>
+        <image name="rectangle.3.group.fill" catalog="system" width="128" height="81"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

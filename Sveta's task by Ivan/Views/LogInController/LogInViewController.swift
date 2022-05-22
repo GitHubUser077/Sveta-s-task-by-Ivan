@@ -47,6 +47,14 @@ class LogInViewController: UIViewController {
         
         let appTabBarController = storyboard?.instantiateViewController(withIdentifier: "AppTabBar") as! UITabBarController
         
+//        let meUser = SimpleUser(name: "Ivan", avatarImage: "mountain1", photos: [SimplePhoto(name: "phone1"),SimplePhoto(name: "phone2"),SimplePhoto(name: "phone3")], groups: [], friends: testUsers)
+//        
+//        let friendsVC = storyboard?.instantiateViewController(withIdentifier: "FriendsViewController") as! FriendsViewController
+//        
+//        friendsVC.meUser = meUser
+//        
+////        let nVC = UINavigationController(rootViewController: friendsVC)
+        
         appTabBarController.modalPresentationStyle = .fullScreen
         appTabBarController.modalTransitionStyle = .flipHorizontal
         

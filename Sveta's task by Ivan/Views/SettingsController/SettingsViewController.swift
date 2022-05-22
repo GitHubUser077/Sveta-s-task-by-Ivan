@@ -8,6 +8,9 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+    
+        //MARK: - Dependencies
+    var meUser: SimpleUser!
 
     
         //MARK: - Lifecycle
@@ -15,6 +18,9 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Settings"
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(didTapLogoutBarButton))
     }

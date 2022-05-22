@@ -3,4 +3,22 @@
    uuid = "11E7BE56-2C09-470B-B553-686C98573981"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FA65D010-0713-48A2-9FAA-34E98AF92956"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../var/folders/p0/gzsjkj5142s0k95gklshjqhw0000gn/T/xcode/scm/Sveta&apos;s task by Ivan/ee58815943d4194ae115086fb8fd7e3dfcb87de5/Sveta&apos;s task by Ivan/Custom Views/CollectionViewCells/FriendsPhotosCollectionViewCell/FriendsPhotosCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "configure(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

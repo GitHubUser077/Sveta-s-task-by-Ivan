@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042CB6D2282DAD4100940A25 /* SimpleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CB6D1282DAD4100940A25 /* SimpleGroup.swift */; };
+		042CB6D5282DAED100940A25 /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CB6D4282DAED100940A25 /* MyGroupsViewController.swift */; };
+		042CB6D8282DAFA100940A25 /* SubscribeGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CB6D7282DAFA100940A25 /* SubscribeGroupViewController.swift */; };
+		043239F8282DC2A9000FE6E4 /* MyGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043239F6282DC2A9000FE6E4 /* MyGroupTableViewCell.swift */; };
+		043239F9282DC2A9000FE6E4 /* MyGroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043239F7282DC2A9000FE6E4 /* MyGroupTableViewCell.xib */; };
+		043239FD28319329000FE6E4 /* SubscribeGroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043239FB28319329000FE6E4 /* SubscribeGroupsTableViewCell.swift */; };
+		043239FE28319329000FE6E4 /* SubscribeGroupsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043239FC28319329000FE6E4 /* SubscribeGroupsTableViewCell.xib */; };
 		045772A7282513E700CA4804 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045772A6282513E700CA4804 /* AppDelegate.swift */; };
 		045772A9282513E700CA4804 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045772A8282513E700CA4804 /* SceneDelegate.swift */; };
 		045772AE282513E700CA4804 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045772AC282513E700CA4804 /* Main.storyboard */; };
@@ -29,6 +36,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		042CB6D1282DAD4100940A25 /* SimpleGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleGroup.swift; sourceTree = "<group>"; };
+		042CB6D4282DAED100940A25 /* MyGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsViewController.swift; sourceTree = "<group>"; };
+		042CB6D7282DAFA100940A25 /* SubscribeGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeGroupViewController.swift; sourceTree = "<group>"; };
+		043239F6282DC2A9000FE6E4 /* MyGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupTableViewCell.swift; sourceTree = "<group>"; };
+		043239F7282DC2A9000FE6E4 /* MyGroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyGroupTableViewCell.xib; sourceTree = "<group>"; };
+		043239FB28319329000FE6E4 /* SubscribeGroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeGroupsTableViewCell.swift; sourceTree = "<group>"; };
+		043239FC28319329000FE6E4 /* SubscribeGroupsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribeGroupsTableViewCell.xib; sourceTree = "<group>"; };
 		045772A3282513E700CA4804 /* Sveta's task by Ivan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sveta's task by Ivan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		045772A6282513E700CA4804 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		045772A8282513E700CA4804 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +77,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042CB6D3282DAEB500940A25 /* MyGroupsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				042CB6D4282DAED100940A25 /* MyGroupsViewController.swift */,
+			);
+			path = MyGroupsViewController;
+			sourceTree = "<group>";
+		};
+		042CB6D6282DAF7C00940A25 /* SubscribeGroupViewController */ = {
+			isa = PBXGroup;
+			children = (
+				042CB6D7282DAFA100940A25 /* SubscribeGroupViewController.swift */,
+			);
+			path = SubscribeGroupViewController;
+			sourceTree = "<group>";
+		};
+		043239F4282DC266000FE6E4 /* FriendsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				04F19C71282A5FC8009D353E /* FriendsTableViewCell.swift */,
+				04F19C72282A5FC8009D353E /* FriendsTableViewCell.xib */,
+			);
+			path = FriendsTableViewCell;
+			sourceTree = "<group>";
+		};
+		043239F5282DC286000FE6E4 /* MyGroupsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				043239F6282DC2A9000FE6E4 /* MyGroupTableViewCell.swift */,
+				043239F7282DC2A9000FE6E4 /* MyGroupTableViewCell.xib */,
+			);
+			path = MyGroupsTableViewCell;
+			sourceTree = "<group>";
+		};
+		043239FA283192E8000FE6E4 /* SubsctibeToGroupTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				043239FB28319329000FE6E4 /* SubscribeGroupsTableViewCell.swift */,
+				043239FC28319329000FE6E4 /* SubscribeGroupsTableViewCell.xib */,
+			);
+			path = SubsctibeToGroupTableViewCell;
+			sourceTree = "<group>";
+		};
 		0457729A282513E700CA4804 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +159,7 @@
 				04C646672826588500BF5E03 /* InternetUser.swift */,
 				04C6466928265A4500BF5E03 /* SimpleUser.swift */,
 				04F19C7B282A696E009D353E /* SimplePhoto.swift */,
+				042CB6D1282DAD4100940A25 /* SimpleGroup.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -109,6 +167,8 @@
 		045772BB2825142800CA4804 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				042CB6D6282DAF7C00940A25 /* SubscribeGroupViewController */,
+				042CB6D3282DAEB500940A25 /* MyGroupsViewController */,
 				04F19C85282BEC63009D353E /* LikePhotoViewController */,
 				04F19C7D282AC800009D353E /* FriendsPhotesViewController */,
 				04C6466C282670D500BF5E03 /* FriendsViewController */,
@@ -131,8 +191,9 @@
 		045772BD2825148C00CA4804 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				04F19C71282A5FC8009D353E /* FriendsTableViewCell.swift */,
-				04F19C72282A5FC8009D353E /* FriendsTableViewCell.xib */,
+				043239FA283192E8000FE6E4 /* SubsctibeToGroupTableViewCell */,
+				043239F5282DC286000FE6E4 /* MyGroupsTableViewCell */,
+				043239F4282DC266000FE6E4 /* FriendsTableViewCell */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -279,8 +340,10 @@
 				045772B3282513E700CA4804 /* LaunchScreen.storyboard in Resources */,
 				045772B0282513E700CA4804 /* Assets.xcassets in Resources */,
 				045772AE282513E700CA4804 /* Main.storyboard in Resources */,
+				043239F9282DC2A9000FE6E4 /* MyGroupTableViewCell.xib in Resources */,
 				04F19C84282ACBAB009D353E /* FriendsPhotosCollectionViewCell.xib in Resources */,
 				04F19C74282A5FC8009D353E /* FriendsTableViewCell.xib in Resources */,
+				043239FE28319329000FE6E4 /* SubscribeGroupsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +356,8 @@
 			files = (
 				04F19C7A282A61A7009D353E /* UIViewExtension.swift in Sources */,
 				04F19C7F282AC834009D353E /* FriendsPhotosViewController.swift in Sources */,
+				043239FD28319329000FE6E4 /* SubscribeGroupsTableViewCell.swift in Sources */,
+				042CB6D2282DAD4100940A25 /* SimpleGroup.swift in Sources */,
 				04F19C7C282A696E009D353E /* SimplePhoto.swift in Sources */,
 				045772C12825183C00CA4804 /* LogInViewController.swift in Sources */,
 				04F19C77282A612B009D353E /* CardView.swift in Sources */,
@@ -302,9 +367,12 @@
 				04F19C73282A5FC8009D353E /* FriendsTableViewCell.swift in Sources */,
 				04F19C83282ACBAB009D353E /* FriendsPhotosCollectionViewCell.swift in Sources */,
 				045772C42825238A00CA4804 /* SettingsViewController.swift in Sources */,
+				042CB6D5282DAED100940A25 /* MyGroupsViewController.swift in Sources */,
 				04C6466E2826710500BF5E03 /* FriendsViewController.swift in Sources */,
 				04C6466A28265A4500BF5E03 /* SimpleUser.swift in Sources */,
+				043239F8282DC2A9000FE6E4 /* MyGroupTableViewCell.swift in Sources */,
 				04C646682826588500BF5E03 /* InternetUser.swift in Sources */,
+				042CB6D8282DAFA100940A25 /* SubscribeGroupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
