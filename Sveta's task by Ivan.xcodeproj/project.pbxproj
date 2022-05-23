@@ -14,6 +14,7 @@
 		043239F9282DC2A9000FE6E4 /* MyGroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043239F7282DC2A9000FE6E4 /* MyGroupTableViewCell.xib */; };
 		043239FD28319329000FE6E4 /* SubscribeGroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043239FB28319329000FE6E4 /* SubscribeGroupsTableViewCell.swift */; };
 		043239FE28319329000FE6E4 /* SubscribeGroupsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043239FC28319329000FE6E4 /* SubscribeGroupsTableViewCell.xib */; };
+		044538F6283A538B006A430E /* SelectedGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044538F5283A538B006A430E /* SelectedGroupViewController.swift */; };
 		045772A7282513E700CA4804 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045772A6282513E700CA4804 /* AppDelegate.swift */; };
 		045772A9282513E700CA4804 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045772A8282513E700CA4804 /* SceneDelegate.swift */; };
 		045772AE282513E700CA4804 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045772AC282513E700CA4804 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		043239F7282DC2A9000FE6E4 /* MyGroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyGroupTableViewCell.xib; sourceTree = "<group>"; };
 		043239FB28319329000FE6E4 /* SubscribeGroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeGroupsTableViewCell.swift; sourceTree = "<group>"; };
 		043239FC28319329000FE6E4 /* SubscribeGroupsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribeGroupsTableViewCell.xib; sourceTree = "<group>"; };
+		044538F5283A538B006A430E /* SelectedGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedGroupViewController.swift; sourceTree = "<group>"; };
 		045772A3282513E700CA4804 /* Sveta's task by Ivan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sveta's task by Ivan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		045772A6282513E700CA4804 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		045772A8282513E700CA4804 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,21 @@
 			path = SubsctibeToGroupTableViewCell;
 			sourceTree = "<group>";
 		};
+		044538F4283A5352006A430E /* SellectedGroupViewController */ = {
+			isa = PBXGroup;
+			children = (
+				044538F5283A538B006A430E /* SelectedGroupViewController.swift */,
+			);
+			path = SellectedGroupViewController;
+			sourceTree = "<group>";
+		};
+		044538F7283AB110006A430E /* SelectedGroupViewControllerCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SelectedGroupViewControllerCell;
+			sourceTree = "<group>";
+		};
 		0457729A282513E700CA4804 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +184,7 @@
 		045772BB2825142800CA4804 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				044538F4283A5352006A430E /* SellectedGroupViewController */,
 				042CB6D6282DAF7C00940A25 /* SubscribeGroupViewController */,
 				042CB6D3282DAEB500940A25 /* MyGroupsViewController */,
 				04F19C85282BEC63009D353E /* LikePhotoViewController */,
@@ -201,6 +219,7 @@
 		045772BE2825149800CA4804 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				044538F7283AB110006A430E /* SelectedGroupViewControllerCell */,
 				04F19C80282ACB70009D353E /* FriendsPhotosCollectionViewCell */,
 			);
 			path = CollectionViewCells;
@@ -361,6 +380,7 @@
 				04F19C7C282A696E009D353E /* SimplePhoto.swift in Sources */,
 				045772C12825183C00CA4804 /* LogInViewController.swift in Sources */,
 				04F19C77282A612B009D353E /* CardView.swift in Sources */,
+				044538F6283A538B006A430E /* SelectedGroupViewController.swift in Sources */,
 				045772A7282513E700CA4804 /* AppDelegate.swift in Sources */,
 				04F19C87282BEC7F009D353E /* LikePhotoViewController.swift in Sources */,
 				045772A9282513E700CA4804 /* SceneDelegate.swift in Sources */,

@@ -23,7 +23,7 @@ class SubscribeGroupsTableViewCell: UITableViewCell {
 
     @IBOutlet var groupImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subscribeButton: UIButton!
+    @IBOutlet weak var subscribeButton: UIButton! 
 
     
     
@@ -37,11 +37,13 @@ class SubscribeGroupsTableViewCell: UITableViewCell {
             if let group = cellGroup, let userID = userId {
                 if group.users.contains(where: { $0.id == userID }) {
                     subscribeButton.setTitle("Unsubscribe", for: .normal)
+                    subscribeButton.setTitleColor(.red, for: .normal)
                 } else {
                     subscribeButton.setTitle("Subscribe", for: .normal)
+                    subscribeButton.setTitleColor(.systemGreen, for: .normal)
                 }
             }
-     
+            
         }
     }
     

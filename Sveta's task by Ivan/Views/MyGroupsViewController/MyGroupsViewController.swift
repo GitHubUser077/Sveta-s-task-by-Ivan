@@ -15,12 +15,13 @@ class MyGroupsViewController: UIViewController {
     
         //MARK: - Properties
 //    var user: SimpleUser = SimpleUser(name: "Ivan", avatarImage: "user1", photos: [], groups: simpleGroupTestData)
+//groups: [SimpleGroup(name: "hoho", photos: [SimplePhoto(name: "cat1")], thumbnailPhoto: SimplePhoto(name: "cat3"), groupDescriptionText: "gjgj", isSubscribedToUser: true, users: [])]
     
-    
-    var meUser = SimpleUser(name: "Ivan", avatarImage: "mountain1", photos: [SimplePhoto(name: "phone1"),SimplePhoto(name: "phone2"),SimplePhoto(name: "phone3")], groups: [SimpleGroup(name: "hoho", photos: [SimplePhoto(name: "cat1")], thumbnailPhoto: SimplePhoto(name: "cat3"), groupDescriptionText: "gjgj", isSubscribedToUser: true, users: [])], friends: testUsers) {
+    var meUser = SimpleUser(name: "Ivan", avatarImage: "mountain1", photos: [SimplePhoto(name: "phone1"),SimplePhoto(name: "phone2"),SimplePhoto(name: "phone3")], groups: [], friends: testUsers) {
         didSet {
             print("is set !!!!!!!!!!")
             filteredGroupsDictionary = [:]
+            filteredGroupNameLetterTitles = []
             createGroupDictionaryAndTitles()
         }
     }
@@ -80,9 +81,8 @@ class MyGroupsViewController: UIViewController {
         
         subscribeToGroupsVC.completionHandler = { [weak self] returnedUser in
            
-            self?.meUser = returnedUser
-           
             DispatchQueue.main.async {
+                self?.meUser = returnedUser
                 self?.groupTableView.reloadData()
             }
         }
@@ -170,6 +170,31 @@ extension MyGroupsViewController: UITableViewDelegate, UITableViewDataSource {
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         
         return filteredGroupNameLetterTitles
+    }
+    
+    
+        //MARK: - Navigation select cell
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let dictionaryKey = filteredGroupNameLetterTitles[indexPath.section]
+        
+        if let groups = filteredGroupsDictionary[dictionaryKey] {
+            let group = groups[indexPath.row]
+            
+            let selectedGroupVC = storyboard?.instantiateViewController(withIdentifier: "SelectedGroupViewController") as! SelectedGroupViewController
+            selectedGroupVC.meUser = meUser
+            selectedGroupVC.group = group
+            selectedGroupVC.completionHandler = { [weak self] returnedUser in
+                self?.meUser = returnedUser
+                self?.filteredGroupsDictionary = [:]
+                self?.createGroupDictionaryAndTitles()
+                self?.groupTableView.reloadData()
+            }
+            navigationController?.pushViewController(selectedGroupVC, animated: true)
+        }
+            
     }
     
     

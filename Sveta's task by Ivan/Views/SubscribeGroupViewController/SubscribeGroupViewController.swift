@@ -17,7 +17,6 @@ class SubscribeGroupViewController: UIViewController {
     
     //MARK: - Dependencies
     var meUser: SimpleUser!
-    
     //MARK: - Properties
     
     
@@ -114,6 +113,34 @@ extension SubscribeGroupViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let dictionaryKey = filteredTitleLetters[indexPath.section]
+        
+        if let groups = filteredDictionaryOfGroups[dictionaryKey] {
+            let group = groups[indexPath.row]
+            
+            let selectedGroupVC = storyboard?.instantiateViewController(withIdentifier: "SelectedGroupViewController") as! SelectedGroupViewController
+            selectedGroupVC.meUser = meUser
+            selectedGroupVC.group = group
+            selectedGroupVC.completionHandler = { [weak self] returnedUser in
+               
+                self?.meUser = returnedUser
+                self?.filteredDictionaryOfGroups = [:]
+                self?.setUpDictionaryAndTitles()
+                self?.groupTableView.reloadData()
+                    
+            }
+            
+            navigationController?.pushViewController(selectedGroupVC, animated: true)
+            
+        }
+        
+        
+    }
+    
+    
     
 }
 
@@ -141,6 +168,7 @@ extension SubscribeGroupViewController: SubscribeGroupsTableViewCellProtocol {
         }
 
         filteredDictionaryOfGroups = [:]
+        filteredTitleLetters = []
         setUpDictionaryAndTitles()
         groupTableView.reloadData()
         

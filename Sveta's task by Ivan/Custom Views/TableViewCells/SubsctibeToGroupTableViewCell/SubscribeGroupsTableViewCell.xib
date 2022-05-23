@@ -35,7 +35,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRE-1E-Gcb">
-                        <rect key="frame" x="156.5" y="5" width="343.5" height="50"/>
+                        <rect key="frame" x="350" y="5" width="150" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="AJC-5L-4oJ"/>
+                        </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                         <connections>
@@ -50,7 +53,6 @@
                     <constraint firstItem="65M-70-A24" firstAttribute="leading" secondItem="FFK-NW-yWg" secondAttribute="trailing" constant="20" id="cg5-Ye-7Ic"/>
                     <constraint firstItem="FFK-NW-yWg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="clC-lq-quF"/>
                     <constraint firstItem="65M-70-A24" firstAttribute="centerY" secondItem="FFK-NW-yWg" secondAttribute="centerY" id="it5-JP-frc"/>
-                    <constraint firstItem="JRE-1E-Gcb" firstAttribute="leading" secondItem="65M-70-A24" secondAttribute="trailing" constant="10" id="kDb-qI-BXu"/>
                     <constraint firstItem="65M-70-A24" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" symbolic="YES" id="kPt-OS-7Xv"/>
                     <constraint firstItem="JRE-1E-Gcb" firstAttribute="centerY" secondItem="65M-70-A24" secondAttribute="centerY" id="pRU-MW-4Qu"/>
                     <constraint firstAttribute="bottom" secondItem="JRE-1E-Gcb" secondAttribute="bottom" constant="5" id="qqo-Hs-SQN"/>
