@@ -14,20 +14,20 @@ class FriendsPhotosViewController: UIViewController {
     
         //MARK: - Dependencies
     
-    var user: SimpleUser! {
+    var user: User! {
         didSet {
-            usersPhotos = user.photos
+//            usersPhotos = user.photos
         }
     }
     
-    var usersPhotos: [SimplePhoto] = []
+    var usersPhotos: [Photo] = []
     
     
         //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "\(user.name)'s photos"
+        title = "\(user.fullName)'s photos"
         
           //MARK: - CollectionViewCell Layout
         let layout = UICollectionViewFlowLayout()
@@ -46,6 +46,20 @@ class FriendsPhotosViewController: UIViewController {
         friendsCollectionView.register(FriendsPhotosCollectionViewCell.nib(), forCellWithReuseIdentifier: FriendsPhotosCollectionViewCell.identifier)
         friendsCollectionView.delegate = self
         friendsCollectionView.dataSource = self
+        
+        
+        
+        NetworkManager.shared.request(url: API.urlForPhotos(userId: user.id), expecting: PhotoResponse.self) { response in
+            switch response {
+            case .success( let result ):
+                DispatchQueue.main.async {
+                    self.usersPhotos = result.response.photos
+                    self.friendsCollectionView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
 
@@ -60,11 +74,13 @@ extension FriendsPhotosViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return usersPhotos.count
+        print("&&&&&&&&&&&&&&&&&&&&&&&&&")
+        print("\(usersPhotos.count)")
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let photName = usersPhotos[indexPath.row].name
+        let photName = usersPhotos[indexPath.row]
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FriendsPhotosCollectionViewCell.identifier, for: indexPath) as! FriendsPhotosCollectionViewCell
         

@@ -33,7 +33,6 @@ class NetworkManager {
     
     func request<T: Codable>(url: URL?, expecting: T.Type , completion: @escaping (Result<T, Error>) -> Void ) {
         guard let url = url else {
-            //Invalid url
             completion(.failure(APIError.invalidURL))
           return
         }

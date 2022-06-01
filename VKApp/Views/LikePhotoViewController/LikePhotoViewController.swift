@@ -13,7 +13,6 @@ class LikePhotoViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
-    
 
     
     @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
@@ -32,9 +31,9 @@ class LikePhotoViewController: UIViewController {
     
         //MARK: - Properties
     
-    var photo: SimplePhoto!
+    var photo: Photo!
     
-    var completionHandler: ((SimplePhoto) -> ())?
+    var completionHandler: ((Photo) -> ())?
 
     
         //MARK: - Lifecycle
@@ -44,17 +43,21 @@ class LikePhotoViewController: UIViewController {
         
         scrollView.delegate = self
        
-        imageView.image = UIImage(named: photo.name)
-    
+//        imageView.load(url: photo.sizes.first?.url.asUrl)
+        
         updateConstraintsForSize(view.bounds.size)
         updateMinZoomScaleForSize(view.bounds.size)
         
+        loadImageAndResizeImage(with: photo.sizes.last?.url.asUrl)
     }
+    
+   
+
     
     override func viewDidLayoutSubviews() {
     
         super.viewDidLayoutSubviews()
-        setUpLabelsAndTexts()
+//        setUpLabelsAndTexts()
         updateConstraintsForSize(view.bounds.size)
         updateMinZoomScaleForSize(view.bounds.size)
         
@@ -66,7 +69,7 @@ class LikePhotoViewController: UIViewController {
     
     @IBAction func didTapLikeButton(_ sender: UIButton) {
         
-        onLikePhoto()
+//        onLikePhoto()
         
         completionHandler?(photo)
 
@@ -74,36 +77,60 @@ class LikePhotoViewController: UIViewController {
     
     
     
-    private func onLikePhoto() {
-        photo.isLiked.toggle()
-        
-        if photo.isLiked == false {
-            likeButton.setTitle("Like", for: .normal)
-            heartLabel.text = "♡"
-            photo.numberOfLikes -= 1
-            likeCountLabel.text = "\(photo.numberOfLikes)"
-        } else {
-            likeButton.setTitle("Dislike", for: .normal)
-            photo.numberOfLikes += 1
-            heartLabel.text = "❤️"
-            likeCountLabel.text = "\(photo.numberOfLikes)"
-            
-        }
-        
-      
+//    private func onLikePhoto() {
+//        photo.isLiked.toggle()
+//
+//        if photo.isLiked == false {
+//            likeButton.setTitle("Like", for: .normal)
+//            heartLabel.text = "♡"
+//            photo.numberOfLikes -= 1
+//            likeCountLabel.text = "\(photo.numberOfLikes)"
+//        } else {
+//            likeButton.setTitle("Dislike", for: .normal)
+//            photo.numberOfLikes += 1
+//            heartLabel.text = "❤️"
+//            likeCountLabel.text = "\(photo.numberOfLikes)"
+//
+//        }
+//
+//
+//    }
+    
+    
+//    private func setUpLabelsAndTexts() {
+//        if photo.isLiked {
+//            likeButton.setTitle("Dislike", for: .normal)
+//            heartLabel.text = "❤️"
+//            likeCountLabel.text = "\(photo.numberOfLikes)"
+//        } else {
+//            likeButton.setTitle("Like", for: .normal)
+//            heartLabel.text = "♡"
+//            likeCountLabel.text = "\(photo.numberOfLikes)"
+//        }
+//    }
+    
+    
+        //MARK: - Private Methods
+    
+    private func resizeImage() {
+        updateConstraintsForSize(view.bounds.size)
+        updateMinZoomScaleForSize(view.bounds.size)
     }
     
-    
-    private func setUpLabelsAndTexts() {
-        if photo.isLiked {
-            likeButton.setTitle("Dislike", for: .normal)
-            heartLabel.text = "❤️"
-            likeCountLabel.text = "\(photo.numberOfLikes)"
-        } else {
-            likeButton.setTitle("Like", for: .normal)
-            heartLabel.text = "♡"
-            likeCountLabel.text = "\(photo.numberOfLikes)"
-        }
+    private func loadImageAndResizeImage(with url: URL?) {
+       
+        guard let url = url else { return }
+        
+            URLSession.shared.dataTask(with: url) { data, _, erro in
+                guard let data = data else { return }
+                DispatchQueue.main.async() { [weak self] in
+                    self?.imageView.image = UIImage(data: data)
+                    self?.resizeImage()
+                    self?.scrollView.updateConstraints()
+                    self?.resizeImage()
+                }
+            }.resume()
+        
     }
  
 

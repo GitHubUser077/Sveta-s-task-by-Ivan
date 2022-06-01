@@ -172,8 +172,8 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
             
             let friendsPhotosViewController = storyboard?.instantiateViewController(withIdentifier: "FriendsPhotosViewController") as! FriendsPhotosViewController
             
-            //FIXME:  Have to pass a User not a SimpleUser
-//            friendsPhotosViewController.user = user
+            
+            friendsPhotosViewController.user = user
             
             navigationController?.pushViewController(friendsPhotosViewController, animated: true)
             

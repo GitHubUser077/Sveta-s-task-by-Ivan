@@ -25,8 +25,8 @@ class FriendsPhotosCollectionViewCell: UICollectionViewCell {
   
     
         //MARK: - Public Methods
-    public func configure(with photoName: String) {
-        friendPhotoImageView.image = UIImage(named: photoName)
+    public func configure(with model: Photo) {
+        friendPhotoImageView.load(url: model.sizes.first?.url.asUrl)
     }
     
     

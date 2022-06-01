@@ -28,5 +28,24 @@ struct API {
         return url
     }
     
+    static func urlForPhotos(userId: Int) -> URL? {
+        
+        var urlConstructor = URLComponents()
+                urlConstructor.scheme = "https"
+                urlConstructor.host = "api.vk.com"
+        urlConstructor.path = "/method/photos.getAll"
+                urlConstructor.queryItems = [
+                    URLQueryItem(name: "access_token", value: String(AuthorizationInfo.shared.token)),
+                    URLQueryItem(name: "v", value: "5.131"),
+                    URLQueryItem(name: "user_id", value: String(AuthorizationInfo.shared.userID)),
+                    URLQueryItem(name: "count", value: "200"),
+                    URLQueryItem(name: "extended", value: "1"),
+                    URLQueryItem(name: "owner_id", value: String(userId))
+                ]
+            guard let url = urlConstructor.url else { return nil }
+        
+        return url
+    }
+    
     
 }
