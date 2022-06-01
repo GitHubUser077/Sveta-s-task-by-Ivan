@@ -22,6 +22,13 @@
 		045772B3282513E700CA4804 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045772B1282513E700CA4804 /* LaunchScreen.storyboard */; };
 		045772C12825183C00CA4804 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045772C02825183C00CA4804 /* LogInViewController.swift */; };
 		045772C42825238A00CA4804 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045772C32825238A00CA4804 /* SettingsViewController.swift */; };
+		0457D4782847B140005D02DF /* InternetPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457D4772847B140005D02DF /* InternetPhoto.swift */; };
+		0457D47A2847CF08005D02DF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457D4792847CF08005D02DF /* API.swift */; };
+		0457D47D2847E458005D02DF /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457D47C2847E458005D02DF /* UIImageExtension.swift */; };
+		0457D4802847E4FD005D02DF /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457D47F2847E4FD005D02DF /* StringExtension.swift */; };
+		0469FD282844CEA700BD4CC0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469FD272844CEA700BD4CC0 /* NetworkManager.swift */; };
+		0469FD2B2845500500BD4CC0 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469FD2A2845500500BD4CC0 /* AuthorizationViewController.swift */; };
+		0469FD2D2845513100BD4CC0 /* AuthorizationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469FD2C2845513100BD4CC0 /* AuthorizationInfo.swift */; };
 		04C646682826588500BF5E03 /* InternetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C646672826588500BF5E03 /* InternetUser.swift */; };
 		04C6466A28265A4500BF5E03 /* SimpleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6466928265A4500BF5E03 /* SimpleUser.swift */; };
 		04C6466E2826710500BF5E03 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6466D2826710500BF5E03 /* FriendsViewController.swift */; };
@@ -45,7 +52,7 @@
 		043239FB28319329000FE6E4 /* SubscribeGroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeGroupsTableViewCell.swift; sourceTree = "<group>"; };
 		043239FC28319329000FE6E4 /* SubscribeGroupsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribeGroupsTableViewCell.xib; sourceTree = "<group>"; };
 		044538F5283A538B006A430E /* SelectedGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedGroupViewController.swift; sourceTree = "<group>"; };
-		045772A3282513E700CA4804 /* Sveta's task by Ivan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sveta's task by Ivan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		045772A3282513E700CA4804 /* VKApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045772A6282513E700CA4804 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		045772A8282513E700CA4804 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		045772AD282513E700CA4804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,6 +61,13 @@
 		045772B4282513E700CA4804 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		045772C02825183C00CA4804 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		045772C32825238A00CA4804 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0457D4772847B140005D02DF /* InternetPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetPhoto.swift; sourceTree = "<group>"; };
+		0457D4792847CF08005D02DF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		0457D47C2847E458005D02DF /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		0457D47F2847E4FD005D02DF /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		0469FD272844CEA700BD4CC0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0469FD2A2845500500BD4CC0 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		0469FD2C2845513100BD4CC0 /* AuthorizationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInfo.swift; sourceTree = "<group>"; };
 		04C646672826588500BF5E03 /* InternetUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetUser.swift; sourceTree = "<group>"; };
 		04C6466928265A4500BF5E03 /* SimpleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUser.swift; sourceTree = "<group>"; };
 		04C6466D2826710500BF5E03 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
@@ -140,7 +154,7 @@
 		0457729A282513E700CA4804 = {
 			isa = PBXGroup;
 			children = (
-				045772A5282513E700CA4804 /* Sveta's task by Ivan */,
+				045772A5282513E700CA4804 /* VKApp */,
 				045772A4282513E700CA4804 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,14 +162,15 @@
 		045772A4282513E700CA4804 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				045772A3282513E700CA4804 /* Sveta's task by Ivan.app */,
+				045772A3282513E700CA4804 /* VKApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		045772A5282513E700CA4804 /* Sveta's task by Ivan */ = {
+		045772A5282513E700CA4804 /* VKApp */ = {
 			isa = PBXGroup;
 			children = (
+				0469FD262844CE7600BD4CC0 /* Network */,
 				04C64664282542AD00BF5E03 /* Extensions */,
 				045772BC2825147B00CA4804 /* Custom Views */,
 				045772BB2825142800CA4804 /* Views */,
@@ -167,13 +182,14 @@
 				045772B1282513E700CA4804 /* LaunchScreen.storyboard */,
 				045772B4282513E700CA4804 /* Info.plist */,
 			);
-			path = "Sveta's task by Ivan";
+			path = VKApp;
 			sourceTree = "<group>";
 		};
 		045772BA2825142000CA4804 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				04C646672826588500BF5E03 /* InternetUser.swift */,
+				0457D4772847B140005D02DF /* InternetPhoto.swift */,
 				04C6466928265A4500BF5E03 /* SimpleUser.swift */,
 				04F19C7B282A696E009D353E /* SimplePhoto.swift */,
 				042CB6D1282DAD4100940A25 /* SimpleGroup.swift */,
@@ -184,6 +200,7 @@
 		045772BB2825142800CA4804 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0469FD2928454FE300BD4CC0 /* AuthorizationViewController */,
 				044538F4283A5352006A430E /* SellectedGroupViewController */,
 				042CB6D6282DAF7C00940A25 /* SubscribeGroupViewController */,
 				042CB6D3282DAEB500940A25 /* MyGroupsViewController */,
@@ -241,9 +258,45 @@
 			path = SettingsController;
 			sourceTree = "<group>";
 		};
+		0457D47B2847E41F005D02DF /* UIImage+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0457D47C2847E458005D02DF /* UIImageExtension.swift */,
+			);
+			path = "UIImage+Extension";
+			sourceTree = "<group>";
+		};
+		0457D47E2847E4E9005D02DF /* String+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0457D47F2847E4FD005D02DF /* StringExtension.swift */,
+			);
+			path = "String+Extension";
+			sourceTree = "<group>";
+		};
+		0469FD262844CE7600BD4CC0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0469FD272844CEA700BD4CC0 /* NetworkManager.swift */,
+				0469FD2C2845513100BD4CC0 /* AuthorizationInfo.swift */,
+				0457D4792847CF08005D02DF /* API.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0469FD2928454FE300BD4CC0 /* AuthorizationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0469FD2A2845500500BD4CC0 /* AuthorizationViewController.swift */,
+			);
+			path = AuthorizationViewController;
+			sourceTree = "<group>";
+		};
 		04C64664282542AD00BF5E03 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0457D47E2847E4E9005D02DF /* String+Extension */,
+				0457D47B2847E41F005D02DF /* UIImage+Extension */,
 				04F19C78282A618C009D353E /* UIView+Extension */,
 			);
 			path = Extensions;
@@ -301,9 +354,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		045772A2282513E700CA4804 /* Sveta's task by Ivan */ = {
+		045772A2282513E700CA4804 /* VKApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 045772B7282513E700CA4804 /* Build configuration list for PBXNativeTarget "Sveta's task by Ivan" */;
+			buildConfigurationList = 045772B7282513E700CA4804 /* Build configuration list for PBXNativeTarget "VKApp" */;
 			buildPhases = (
 				0457729F282513E700CA4804 /* Sources */,
 				045772A0282513E700CA4804 /* Frameworks */,
@@ -313,9 +366,9 @@
 			);
 			dependencies = (
 			);
-			name = "Sveta's task by Ivan";
+			name = VKApp;
 			productName = "Sveta's task by Ivan";
-			productReference = 045772A3282513E700CA4804 /* Sveta's task by Ivan.app */;
+			productReference = 045772A3282513E700CA4804 /* VKApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -333,7 +386,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0457729E282513E700CA4804 /* Build configuration list for PBXProject "Sveta's task by Ivan" */;
+			buildConfigurationList = 0457729E282513E700CA4804 /* Build configuration list for PBXProject "VKApp" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -346,7 +399,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				045772A2282513E700CA4804 /* Sveta's task by Ivan */,
+				045772A2282513E700CA4804 /* VKApp */,
 			);
 		};
 /* End PBXProject section */
@@ -373,12 +426,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0469FD2B2845500500BD4CC0 /* AuthorizationViewController.swift in Sources */,
 				04F19C7A282A61A7009D353E /* UIViewExtension.swift in Sources */,
 				04F19C7F282AC834009D353E /* FriendsPhotosViewController.swift in Sources */,
 				043239FD28319329000FE6E4 /* SubscribeGroupsTableViewCell.swift in Sources */,
+				0469FD282844CEA700BD4CC0 /* NetworkManager.swift in Sources */,
+				0457D4802847E4FD005D02DF /* StringExtension.swift in Sources */,
 				042CB6D2282DAD4100940A25 /* SimpleGroup.swift in Sources */,
 				04F19C7C282A696E009D353E /* SimplePhoto.swift in Sources */,
 				045772C12825183C00CA4804 /* LogInViewController.swift in Sources */,
+				0469FD2D2845513100BD4CC0 /* AuthorizationInfo.swift in Sources */,
+				0457D47D2847E458005D02DF /* UIImageExtension.swift in Sources */,
+				0457D4782847B140005D02DF /* InternetPhoto.swift in Sources */,
 				04F19C77282A612B009D353E /* CardView.swift in Sources */,
 				044538F6283A538B006A430E /* SelectedGroupViewController.swift in Sources */,
 				045772A7282513E700CA4804 /* AppDelegate.swift in Sources */,
@@ -388,6 +447,7 @@
 				04F19C83282ACBAB009D353E /* FriendsPhotosCollectionViewCell.swift in Sources */,
 				045772C42825238A00CA4804 /* SettingsViewController.swift in Sources */,
 				042CB6D5282DAED100940A25 /* MyGroupsViewController.swift in Sources */,
+				0457D47A2847CF08005D02DF /* API.swift in Sources */,
 				04C6466E2826710500BF5E03 /* FriendsViewController.swift in Sources */,
 				04C6466A28265A4500BF5E03 /* SimpleUser.swift in Sources */,
 				043239F8282DC2A9000FE6E4 /* MyGroupTableViewCell.swift in Sources */,
@@ -540,7 +600,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Sveta's task by Ivan/Info.plist";
+				INFOPLIST_FILE = VKApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -552,7 +612,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "QuickWalker.Sveta-s-task-by-Ivan";
+				PRODUCT_BUNDLE_IDENTIFIER = QuickWalker.VKApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -568,7 +628,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Sveta's task by Ivan/Info.plist";
+				INFOPLIST_FILE = VKApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -580,7 +640,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "QuickWalker.Sveta-s-task-by-Ivan";
+				PRODUCT_BUNDLE_IDENTIFIER = QuickWalker.VKApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -591,7 +651,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0457729E282513E700CA4804 /* Build configuration list for PBXProject "Sveta's task by Ivan" */ = {
+		0457729E282513E700CA4804 /* Build configuration list for PBXProject "VKApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				045772B5282513E700CA4804 /* Debug */,
@@ -600,7 +660,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		045772B7282513E700CA4804 /* Build configuration list for PBXNativeTarget "Sveta's task by Ivan" */ = {
+		045772B7282513E700CA4804 /* Build configuration list for PBXNativeTarget "VKApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				045772B8282513E700CA4804 /* Debug */,

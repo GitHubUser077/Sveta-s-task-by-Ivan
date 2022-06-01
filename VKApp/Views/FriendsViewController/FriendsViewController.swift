@@ -23,19 +23,21 @@ class FriendsViewController: UIViewController {
     
 //    var simpleUsers = testUsers
     
-    var globalUserDictionary = [String:[SimpleUser]]()
+    var users: [User] = []
+    
+    var globalUserDictionary = [String:[User]]()
     var globalUserNameLetterTitles = [String]()
     
     
 
-    
+        //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        createUserDictionary()
+        
 
         friendsTableView.register(FriendsTableViewCell.nib(), forCellReuseIdentifier: FriendsTableViewCell.identifier)
         friendsTableView.delegate = self
@@ -44,16 +46,31 @@ class FriendsViewController: UIViewController {
         friendsSearchBar.delegate = self
         
        
+        NetworkManager.shared.request(url: API.urlForFriends(), expecting: FriendsResponse.self) { response in
+            switch response {
+            case .success(let result):
+                for user in result.response.users {
+                    print("\(user.firstName)")
+                }
+                DispatchQueue.main.async {
+                    self.users = result.response.users
+                    self.createUserDictionary()
+                    self.friendsTableView.reloadData()
+                }
+            case .failure( let error):
+                print(error)
+            }
+        }
         
     }
     
     private func createUserDictionary() {
      
-        print("\(meUser.friends)")
+//        print("\(meUser.friends)")
 
-        for user in meUser.friends {
-            let secondLetterIndex = user.name.index(user.name.startIndex, offsetBy: 1)
-            let userNameFirstLetter = String(user.name[..<secondLetterIndex])
+        for user in users {
+            let secondLetterIndex = user.lastName.index(user.firstName.startIndex, offsetBy: 1)
+            let userNameFirstLetter = String(user.lastName[..<secondLetterIndex])
 //            print("\(userNameFirstLetter)")
             
             if var innerLoopUserNameArrayThatHasTheSameKey = globalUserDictionary[userNameFirstLetter] {
@@ -152,7 +169,9 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
             let user = users[indexPath.row]
             
             let friendsPhotosViewController = storyboard?.instantiateViewController(withIdentifier: "FriendsPhotosViewController") as! FriendsPhotosViewController
-            friendsPhotosViewController.user = user
+            
+            //FIXME:  Have to pass a User not a SimpleUser
+//            friendsPhotosViewController.user = user
             
             navigationController?.pushViewController(friendsPhotosViewController, animated: true)
             
@@ -179,12 +198,12 @@ extension FriendsViewController: UISearchBarDelegate {
             globalUserDictionary = [:]
             globalUserNameLetterTitles = []
             
-            for user in  meUser.friends {
+            for user in  users {
                 
-                if user.name.lowercased().contains(searchText.lowercased()) {
+                if user.lastName.lowercased().contains(searchText.lowercased()) {
                    
-                    let secondLetterIndex = user.name.index(user.name.startIndex, offsetBy: 1)
-                    let userNameFirstLetter = String(user.name[..<secondLetterIndex])
+                    let secondLetterIndex = user.lastName.index(user.lastName.startIndex, offsetBy: 1)
+                    let userNameFirstLetter = String(user.lastName[..<secondLetterIndex])
                     
                     if var innerLoopUserNameArrayThatHasTheSameKey = globalUserDictionary[userNameFirstLetter] {
                         innerLoopUserNameArrayThatHasTheSameKey.append(user)

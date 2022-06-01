@@ -26,9 +26,9 @@ class FriendsTableViewCell: UITableViewCell {
     
     
     
-    func configure(with model: SimpleUser) {
-        friendLabel.text = model.name
-        friendImageView.image = UIImage(named: model.avatarImage)
+    func configure(with model: User) {
+        friendLabel.text = "\(model.lastName) \(model.firstName)"
+        friendImageView.load(url: model.thumbnailPhoto.asUrl)
     }
    
     
