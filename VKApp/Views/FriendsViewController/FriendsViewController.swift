@@ -64,13 +64,15 @@ class FriendsViewController: UIViewController {
         
     }
     
+        //MARK: - Private Methods
+    
     private func createUserDictionary() {
      
 //        print("\(meUser.friends)")
 
         for user in users {
-            let secondLetterIndex = user.lastName.index(user.firstName.startIndex, offsetBy: 1)
-            let userNameFirstLetter = String(user.lastName[..<secondLetterIndex])
+            let secondLetterIndex = user.fullName.index(user.fullName.startIndex, offsetBy: 1)
+            let userNameFirstLetter = String(user.fullName[..<secondLetterIndex])
 //            print("\(userNameFirstLetter)")
             
             if var innerLoopUserNameArrayThatHasTheSameKey = globalUserDictionary[userNameFirstLetter] {
@@ -199,11 +201,12 @@ extension FriendsViewController: UISearchBarDelegate {
             globalUserNameLetterTitles = []
             
             for user in  users {
-                
-                if user.lastName.lowercased().contains(searchText.lowercased()) {
+            
+            
+                if user.fullName.lowercased().contains(searchText.lowercased())  {
                    
-                    let secondLetterIndex = user.lastName.index(user.lastName.startIndex, offsetBy: 1)
-                    let userNameFirstLetter = String(user.lastName[..<secondLetterIndex])
+                    let secondLetterIndex = user.fullName.index(user.fullName.startIndex, offsetBy: 1)
+                    let userNameFirstLetter = String(user.fullName[..<secondLetterIndex])
                     
                     if var innerLoopUserNameArrayThatHasTheSameKey = globalUserDictionary[userNameFirstLetter] {
                         innerLoopUserNameArrayThatHasTheSameKey.append(user)
@@ -227,7 +230,11 @@ extension FriendsViewController: UISearchBarDelegate {
         
         friendsTableView.reloadData()
         
+        
     }
+    
+    
+    
 
 }
 

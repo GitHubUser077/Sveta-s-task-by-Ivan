@@ -36,6 +36,10 @@ struct FriendsResponse: Codable {
     let firstName: String
     let lastName: String
     let thumbnailPhoto: String
+     
+     var fullName: String {
+         return lastName + " " + firstName
+     }
 
     enum CodingKeys: String, CodingKey {
         case id
