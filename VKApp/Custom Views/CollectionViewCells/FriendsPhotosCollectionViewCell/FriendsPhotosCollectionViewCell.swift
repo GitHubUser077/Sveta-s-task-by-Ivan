@@ -20,13 +20,19 @@ class FriendsPhotosCollectionViewCell: UICollectionViewCell {
         //MARK: - @IBOutlets
     @IBOutlet var friendPhotoImageView: UIImageView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
   
     
         //MARK: - Public Methods
     public func configure(with model: Photo) {
-        friendPhotoImageView.load(url: model.sizes.first?.url.asUrl)
+        activityIndicator.startAnimating()
+        friendPhotoImageView.load(url: model.sizes.first?.url.asUrl) {
+            
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+        }
     }
     
     

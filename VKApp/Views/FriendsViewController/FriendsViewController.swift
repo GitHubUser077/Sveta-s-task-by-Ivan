@@ -17,7 +17,7 @@ class FriendsViewController: UIViewController {
     
         //MARK: - Properties
     
- 
+    var activityIndicator = UIActivityIndicatorView()
     
     var meUser = SimpleUser(name: "Ivan", avatarImage: "mountain1", photos: [SimplePhoto(name: "phone1"),SimplePhoto(name: "phone2"),SimplePhoto(name: "phone3")], groups: [], friends: testUsers)
     
@@ -45,7 +45,9 @@ class FriendsViewController: UIViewController {
        
         friendsSearchBar.delegate = self
         
-       
+       setUpActivityIndicator()
+        activityIndicator.startAnimating()
+        
         NetworkManager.shared.request(url: API.urlForFriends(), expecting: FriendsResponse.self) { response in
             switch response {
             case .success(let result):
@@ -56,6 +58,7 @@ class FriendsViewController: UIViewController {
                     self.users = result.response.users
                     self.createUserDictionary()
                     self.friendsTableView.reloadData()
+                    self.activityIndicator.stopAnimating()
                 }
             case .failure( let error):
                 print(error)
@@ -93,7 +96,13 @@ class FriendsViewController: UIViewController {
         
     }
 
-
+    private func setUpActivityIndicator() {
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .large
+        activityIndicator.color = UIColor.systemBlue
+        view.addSubview(activityIndicator)
+    }
  
 
 }

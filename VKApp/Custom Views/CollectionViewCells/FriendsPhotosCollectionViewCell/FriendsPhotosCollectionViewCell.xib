@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendsPhotosCollectionViewCell" id="gTV-IL-0wX" customClass="FriendsPhotosCollectionViewCell" customModule="Sveta_s_task_by_Ivan" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendsPhotosCollectionViewCell" id="gTV-IL-0wX" customClass="FriendsPhotosCollectionViewCell" customModule="VKApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="306" height="385"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -19,17 +19,23 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0OM-CI-edn">
                         <rect key="frame" x="0.0" y="0.0" width="306" height="385"/>
                     </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="7Te-PB-n7s">
+                        <rect key="frame" x="134.5" y="174" width="37" height="37"/>
+                    </activityIndicatorView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="7Te-PB-n7s" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="1EH-0Y-bK4"/>
                 <constraint firstItem="0OM-CI-edn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FBQ-to-FIF"/>
                 <constraint firstItem="0OM-CI-edn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LvK-j3-tgw"/>
+                <constraint firstItem="7Te-PB-n7s" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="TJG-sb-zHj"/>
                 <constraint firstAttribute="bottom" secondItem="0OM-CI-edn" secondAttribute="bottom" id="fBM-gR-ZYP"/>
                 <constraint firstAttribute="trailing" secondItem="0OM-CI-edn" secondAttribute="trailing" id="vCd-NF-XCb"/>
             </constraints>
             <size key="customSize" width="306" height="385"/>
             <connections>
+                <outlet property="activityIndicator" destination="7Te-PB-n7s" id="Gwi-Hz-eeT"/>
                 <outlet property="friendPhotoImageView" destination="0OM-CI-edn" id="7Qb-j0-C9b"/>
             </connections>
             <point key="canvasLocation" x="-144.92753623188406" y="118.86160714285714"/>

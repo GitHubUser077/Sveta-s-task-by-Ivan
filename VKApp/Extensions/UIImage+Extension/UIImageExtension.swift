@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImageView {
     
-    func load(url: URL?) {
+    func load(url: URL?, completion: @escaping () -> Void) {
         guard let url = url else {
             print("Invalid url for image")
             return
@@ -20,6 +20,7 @@ extension UIImageView {
             guard let data = data else { return }
             DispatchQueue.main.async() { [weak self] in
                 self?.image = UIImage(data: data)
+                completion()
             }
         }.resume()
     }

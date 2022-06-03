@@ -15,7 +15,10 @@ class FriendsTableViewCell: UITableViewCell {
     
     static func nib() -> UINib {
         return UINib(nibName: String(describing: FriendsTableViewCell.self), bundle: nil)
+        
     }
+    
+ 
     
     
         //MARK: - @IBOutlets
@@ -25,10 +28,18 @@ class FriendsTableViewCell: UITableViewCell {
     @IBOutlet weak var friendLabel: UILabel!
     
     
+    //MARK: - Lifecycle
+
+override func prepareForReuse() {
+    super.prepareForReuse()
+    friendImageView.image = nil
+    friendLabel.text = nil
+}
+    
     
     func configure(with model: User) {
         friendLabel.text = "\(model.lastName) \(model.firstName)"
-        friendImageView.load(url: model.thumbnailPhoto.asUrl)
+        friendImageView.load(url: model.thumbnailPhoto.asUrl) {}
     }
    
     
