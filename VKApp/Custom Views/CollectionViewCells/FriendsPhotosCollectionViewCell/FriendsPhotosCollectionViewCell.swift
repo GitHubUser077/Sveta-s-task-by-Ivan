@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class FriendsPhotosCollectionViewCell: UICollectionViewCell {
     
         //MARK: - Static
@@ -23,15 +24,19 @@ class FriendsPhotosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
-  
+      //MARK: - Properties
+
+    var image: UIImage?
     
         //MARK: - Public Methods
     public func configure(with model: Photo) {
         activityIndicator.startAnimating()
-        friendPhotoImageView.load(url: model.sizes.first?.url.asUrl) {
-            
+        friendPhotoImageView.load(url: model.sizes.first?.url.asUrl) { image in
+            self.image = image
             self.activityIndicator.stopAnimating()
             self.activityIndicator.isHidden = true
+            print("333333333333")
+            print("\(image)")
         }
     }
     

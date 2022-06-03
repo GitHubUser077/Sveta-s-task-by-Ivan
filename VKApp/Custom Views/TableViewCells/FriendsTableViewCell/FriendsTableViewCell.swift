@@ -39,7 +39,7 @@ override func prepareForReuse() {
     
     func configure(with model: User) {
         friendLabel.text = "\(model.lastName) \(model.firstName)"
-        friendImageView.load(url: model.thumbnailPhoto.asUrl) {}
+        friendImageView.load(url: model.thumbnailPhoto.asUrl) { _ in }
     }
    
     

@@ -22,12 +22,19 @@ class FriendsPhotosViewController: UIViewController {
     
     var usersPhotos: [Photo] = []
     
+        //MARK: - Properties
+    
+    
     
         //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "\(user.fullName)'s photos"
+        
+        
+       
+        
         
           //MARK: - CollectionViewCell Layout
         let layout = UICollectionViewFlowLayout()
@@ -63,6 +70,13 @@ class FriendsPhotosViewController: UIViewController {
     }
     
 
+    //MARK: - Private Methods
+    
+    private func getCellPhoto(photo: UIImage) -> UIImage {
+        return photo
+    }
+    
+  
   
 
 }
@@ -94,10 +108,19 @@ extension FriendsPhotosViewController: UICollectionViewDelegate, UICollectionVie
 
         let photo = usersPhotos[indexPath.row]
         
+        let cell = collectionView.cellForItem(at: indexPath) as! FriendsPhotosCollectionViewCell
+        
+        let image = cell.image
+        
+    
         
         let photoViewController = storyboard?.instantiateViewController(withIdentifier: "LikePhotoViewController") as! LikePhotoViewController
         
+        
+        
         photoViewController.photo = photo
+        photoViewController.smallSizeImage = image
+        
         
         photoViewController.completionHandler = { [weak self] returnedPhoto in
             
@@ -116,5 +139,7 @@ extension FriendsPhotosViewController: UICollectionViewDelegate, UICollectionVie
 //
     
 }
+
+
 
 

@@ -32,8 +32,11 @@ class LikePhotoViewController: UIViewController {
         //MARK: - Properties
     
     var photo: Photo!
+    var smallSizeImage: UIImage!
     
     var completionHandler: ((Photo) -> ())?
+    
+    var activityIndicator = UIActivityIndicatorView()
 
     
         //MARK: - Lifecycle
@@ -42,11 +45,14 @@ class LikePhotoViewController: UIViewController {
         super.viewDidLoad()
         
         scrollView.delegate = self
-       
-//        imageView.load(url: photo.sizes.first?.url.asUrl)
+       setUpActivityIndicator()
+
         
         updateConstraintsForSize(view.bounds.size)
         updateMinZoomScaleForSize(view.bounds.size)
+        
+        loadSmallImage()
+      
         
         loadImageAndResizeImage(with: photo.sizes.last?.url.asUrl)
     }
@@ -128,13 +134,32 @@ class LikePhotoViewController: UIViewController {
                     self?.resizeImage()
                     self?.scrollView.updateConstraints()
                     self?.resizeImage()
+                    self?.activityIndicator.stopAnimating()
                 }
             }.resume()
         
     }
- 
+    
+    private func loadSmallImage() {
+        activityIndicator.startAnimating()
+        imageView.image = smallSizeImage
+        self.resizeImage()
+        self.scrollView.updateConstraints()
+        self.resizeImage()
+    }
+    
+    
+    private func setUpActivityIndicator() {
+        activityIndicator.center = imageView.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .large
+        activityIndicator.color = .white
+        view.addSubview(activityIndicator)
+    }
 
 }
+
+
 
     //MARK: - ScrollView Methods
 

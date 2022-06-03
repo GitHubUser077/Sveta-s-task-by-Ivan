@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImageView {
     
-    func load(url: URL?, completion: @escaping () -> Void) {
+    func load(url: URL?, completion: @escaping (UIImage?) -> Void) {
         guard let url = url else {
             print("Invalid url for image")
             return
@@ -19,8 +19,9 @@ extension UIImageView {
         URLSession.shared.dataTask(with: url) { data, _, erro in
             guard let data = data else { return }
             DispatchQueue.main.async() { [weak self] in
+                let image = UIImage(data: data)
                 self?.image = UIImage(data: data)
-                completion()
+                completion(image)
             }
         }.resume()
     }
